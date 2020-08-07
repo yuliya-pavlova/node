@@ -5,7 +5,7 @@ const users = require('./routes/users.js')
 const cards = require('./routes/cards.js')
 
 
-const { PORT = 3000, BASE_PATH } = process.env;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 
@@ -19,7 +19,6 @@ app.use('/cards', cards);
 
 app.use((req, res) => {
   res.status('404');
-  console.log(req.path);
   res.send({ message: 'Запрашиваемый ресурс не найден'});
 });
 

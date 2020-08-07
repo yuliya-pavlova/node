@@ -5,7 +5,6 @@ const router = require('express').Router();
 const pathToProducts = path.join(__dirname, '../data/cards.json');
 
 router.get('/', (req, res) => {
-  console.log('Cards!')  
   const reader = createReadStream(pathToProducts, { encoding: 'utf8' });
 
   reader.on('error', () => {
